@@ -1,6 +1,7 @@
 {
     "userspace_version": "1.1",
     "build_targets": [
-        ["preonic/rev3_drop", "abstrakct"]
+        ["preonic/rev3_drop", "abstrakct"],
+        ["ymdk/ymd21/v2", "abstrakct"]
     ]
 }
