@@ -392,7 +392,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_ADJUST] = LAYOUT_preonic_grid(
   KC_SYRQ, _______, _______, _______, _______,    _______, _______, _______,    _______,    _______, CTALT_0, _______,
-  KC_CAPS, _______, DB_TOGG, RGB_TOG, RGB_M_P,    RGB_M_B, RGB_M_R, _______,    _______,    _______, _______, _______,
+  KC_CAPS, _______, DB_TOGG, UG_TOGG, UG_NEXT,    UG_PREV, _______, _______,    _______,    _______, _______, _______,
   _______, _______, MU_NEXT, AU_ON,   AU_OFF,     _______, _______, _______,    _______,    _______, _______, _______, // DF(_WORK),
   _______, AU_PREV, AU_NEXT, MU_ON,   MU_OFF,     MI_ON,   MI_OFF,  _______,    _______,    _______, _______, DF(_NORM),
   QK_BOOT, _______, _______, _______, TG(_LOWER), _______, _______, TG(_RAISE), TG(_MVMNT), _______, _______, TG(_GAME)
