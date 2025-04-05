@@ -37,7 +37,7 @@
 
 #define KC_LOWR MO(_LOWER)
 #define KC_RAIS MO(_RAISE)
-#define KC_NUMP TG(_NUMPAD)
+#define KC_CORN MO(_CORNER)
 #define KC_NOEN TG(_NOENTER)
 
 #define LOW_SPC LT(_LOWER,KC_SPC)
@@ -76,7 +76,7 @@ enum preonic_layers {
   _RAISE,
   _FOUR,
   _FIVE,
-  _NUMPAD,
+  _CORNER,
   _NOENTER,
   _MVMNT,
   _ADJUST,
@@ -224,7 +224,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   LT(_RAISE, KC_TAB), HOMEALT, HOMECTL, HOMESFT, KC_R,    KC_T,   KC_Y,   KC_U,    HOME_I,  HOME_O, KC_P,    S_RBRC,
   KC_LOWR,            KC_A,    KC_S,    KC_D,    HOMEGUI, KC_G,   KC_H,   KC_J,    KC_K,    KC_L,   TD(X_OE),KC_ENT,
   OSMLSFT,            KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,   KC_N,   KC_M,    KC_COMM, KC_DOT, KC_SLSH, OSMLSFT,
-  KC_LCTL,            KC_NOEN, KC_LALT, KC_LGUI, KC_LOWR, KC_SPC, KC_SPC, KC_RAIS, QK_LEAD, FOUR,   FIVE,    _______
+  KC_LCTL,            KC_NOEN, KC_LALT, KC_LGUI, KC_LOWR, KC_SPC, KC_SPC, KC_RAIS, QK_LEAD, FOUR,   FIVE,    KC_CORN
 ),
 
 /* same as NORM but without homerow modifiers */
@@ -352,12 +352,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |      |      |      |      |      |      |      |      |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
-[_NUMPAD] = LAYOUT_preonic_grid(
+[_CORNER] = LAYOUT_preonic_grid(
   _______, _______, _______, _______, _______, _______, _______, KC_KP_7, KC_KP_8, KC_KP_9, _______, _______,
-  _______, _______, KC_UP,   _______, _______, _______, _______, KC_KP_4, KC_KP_5, KC_KP_6, _______, _______,
-  KC_NUM,  KC_LEFT, KC_DOWN, KC_RGHT, _______, _______, _______, KC_KP_1, KC_KP_2, KC_KP_3, _______, _______,
-  _______, _______, _______, _______, _______, _______, _______, KC_KP_0, DOUBLE0, _______, _______, _______,
-  _______, KC_NUMP, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+  _______, _______, _______, _______, _______, _______, _______, KC_KP_4, KC_KP_5, KC_KP_6, _______, _______,
+  _______, _______, _______, _______, _______, _______, _______, KC_KP_1, KC_KP_2, KC_KP_3, _______, _______,
+  _______, _______, _______, _______, _______, _______, _______, KC_KP_0, DOUBLE0, KC_NUM,  _______, _______,
+  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
 ),
 
 [_MVMNT] = LAYOUT_preonic_grid(
@@ -815,7 +815,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
             case _GAME:
                 rgblight_setrgb(RGB_MAGENTA);
                 break;
-            case _NUMPAD:
+            case _CORNER:
                 rgblight_setrgb(RGB_CYAN);
                 break;
             case _NOENTER:
