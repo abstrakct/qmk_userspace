@@ -121,7 +121,6 @@ enum silakka_keycodes {
   CST_DLR,
   // Other stuff
   ALTTAB,
-  SUPLOWR,
   TESTX,
 };
 
