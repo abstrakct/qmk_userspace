@@ -869,7 +869,7 @@ void leader_end_user(void) {
     } else if(leader_sequence_one_key(KC_C)) {
         SEND_STRING(EMAIL3);
     } else if(leader_sequence_one_key(KC_W)) {
-        SEND_STRING(CW)
+        SEND_STRING(CW);
     } else if(leader_sequence_one_key(KC_Q)) {
         SEND_STRING(":qa\n");
     }
