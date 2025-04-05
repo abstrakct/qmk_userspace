@@ -123,6 +123,7 @@ enum preonic_keycodes {
   ABANG3,
   AP,
   KC_JIGG,
+  RSTPDBG,
 };
 
 // Key overrides
