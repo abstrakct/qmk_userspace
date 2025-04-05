@@ -46,6 +46,7 @@
 #define RAI_SPC LT(_RAISE,KC_SPC)
 #define RAI_ENT LT(_RAISE,KC_ENT)
 
+
 #define CTSH_V  C(S(KC_V))
 #define CTSH_L  C(S(KC_L))
 #define CTSH_M  C(S(KC_M))
@@ -88,47 +89,40 @@ enum silakka_layers {
 };
 
 enum silakka_keycodes {
+  // Layers
   NORM = SAFE_RANGE,
   LOWER,
   RAISE,
-  FOUR,
-  FIVE,
-  BACKLIT,
-  SECRET1,
-  SECRET2,
-  SECRET3,
-  SECRET4,
-  SECRET5,
-  SECRET6,
-  ADMINPW,
-  // BANKID,
-  PERSNR,
+  // Layers (unused)
+  FOUR, FIVE, BACKLIT,
+  // Various secrets
+  SECRET1, SECRET2, SECRET3, SECRET4, SECRET5, SECRET6, ADMINPW, PERSNR,
+  // Work
   CWUSER,
+  KC_JIGG,
+  // Useful macros
   ARROW,
   DBLAROW,
+  RSTPDBG,
   PARANT,
-  ADOTS,
-  EDOTS,
-  ODOTS,
-  UDOTS,
   DOUBLE0,
-  TESTX,
-  LCURLY,
-  RCURLY,
-  LBRACK,
-  RBRACK,
-  //RANGERCP,
-  CST_AT,
-  CST_DLR,
-  ALTTAB,
   DOTDOT,
   EXITENT,
   ABANG,
   ABANG2,
   ABANG3,
   AP,
-  KC_JIGG,
-  RSTPDBG,
+  // Umlauts, currently not in use
+  ADOTS, EDOTS, ODOTS, UDOTS,
+  // Brackets
+  LCURLY, RCURLY, LBRACK, RBRACK,
+  // Alt-Gr
+  CST_AT,
+  CST_DLR,
+  // Other stuff
+  ALTTAB,
+  SUPLOWR,
+  TESTX,
 };
 
 // Key overrides
