@@ -482,21 +482,21 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             if (record->event.pressed) {
                 SEND_STRING("->");
             } else {
-                // keycode ARROW is released
+                // keycode is released
             }
             return false;
         case DBLAROW:
             if (record->event.pressed) {
                 SEND_STRING("=>");
             } else {
-                // keycode ARROW is released
+                // keycode is released
             }
             return false;
         case CWUSER:
             if (record->event.pressed) {
                 SEND_STRING("cwadmin-rokl");
             } else {
-                // keycode ARROW is released
+                // keycode is released
             }
             return false;
         case CST_AT:
@@ -553,40 +553,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             } else {
             }
             return false;
-//        case RANGERCP:
-//            if (record->event.pressed) {
-//                register_code(KC_LSFT);
-//                wait_ms(ALTGR_WAIT);
-//                tap_code(KC_1);
-//                unregister_code(KC_LSFT);
-//
-//                tap_code(KC_C);
-//                wait_ms(ALTGR_WAIT);
-//                tap_code(KC_P);
-//                wait_ms(ALTGR_WAIT);
-//
-//                tap_code(KC_SPC);
-//
-//                register_code(KC_LSFT);
-//                tap_code(KC_2);
-//                unregister_code(KC_LSFT);
-//
-//                register_code(KC_LCTL);
-//                register_code(KC_LSFT);
-//                tap_code(KC_V);
-//                unregister_code(KC_LCTL);
-//                unregister_code(KC_LSFT);
-//
-//                register_code(KC_LSFT);
-//                tap_code(KC_2);
-//                unregister_code(KC_LSFT);
-//
-//                tap_code(KC_SPC);
-//
-//                tap_code(KC_DOT);
-//            } else {
-//            }
-//            return false;
         case ADOTS:
             if (record->event.pressed) {
                 register_code(KC_ALGR);
