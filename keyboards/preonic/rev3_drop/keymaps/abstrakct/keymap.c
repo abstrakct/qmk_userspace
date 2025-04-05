@@ -257,7 +257,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |AltTab| PgUp |  Up  | PgDn |  ()  | [t]  | Home |   [  |   {  |   }  |   ]  |  \   |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * |      | Left | Down |Right |   *  | [g]  | [h]  |   :  |   ;  |   _  |      |      |
+ * |      | Left | Down |Right |   *  | [g]  |  &   |   :  |   ;  |   _  | {:?} |      |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * |      |      |      |      |S-Ins | [b]  | End  |   <  |   >  |      |  =>  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -269,7 +269,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_LOWER] = LAYOUT_preonic_grid(
   KC_TILD, KC_EXLM, CST_AT,  KC_HASH, CST_DLR,  KC_PERC, KC_CIRC, KC_AMPR, _______, NO_PLUS, KC_RPRN, KC_BSPC,
   ALTTAB,  KC_PGUP, KC_UP,   KC_PGDN, PARANT,   _______, KC_HOME, LBRACK,  LCURLY,  RCURLY,  RBRACK,  NO_BSLS,
-  KC_JIGG, KC_LEFT, KC_DOWN, KC_RGHT, NO_ASTR,  _______, KC_CIRC, COLON,   SCOLON,  UNDERSC, _______, _______,
+  KC_JIGG, KC_LEFT, KC_DOWN, KC_RGHT, NO_ASTR,  _______, KC_CIRC, COLON,   SCOLON,  UNDERSC, RSTPDBG, _______,
   _______, _______, _______, _______, S(KC_INS),_______, KC_END,  NO_LABK, NO_RABK, _______, DBLAROW, _______,
   BACKLIT, _______, _______, _______, _______,  _______, _______, _______, _______, _______, _______, _______
 ),
@@ -466,6 +466,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
             break;
+        case RSTPDBG:
+            if (record->event.pressed) {
+                SEND_STRING("{:?}");
+            } else {
+            }
+            return false;
         case BACKLIT:
             if (record->event.pressed) {
                 register_code(KC_RSFT);
