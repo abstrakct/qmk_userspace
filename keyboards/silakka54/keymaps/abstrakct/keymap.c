@@ -226,11 +226,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //  KC_LCTL,            KC_NOEN, KC_LALT, KC_LGUI, KC_LOWR, KC_SPC, KC_SPC, KC_RAIS, QK_LEAD, FOUR,   FIVE,    KC_CORN
 //),
 [_NORM] = LAYOUT(
-    KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                               KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
-    KC_TAB,  HOMEALT, HOMECTL, HOMESFT, KC_R,    KC_T,                               KC_Y,    KC_U,    HOME_I,  HOME_O,  KC_P,    S_RBRC,
-    KC_LOWR, KC_A,    KC_S,    KC_D,    HOMEGUI, KC_G,                               KC_H,    KC_J,    KC_K,    KC_L,    TD(X_OE),KC_ENT,
-    KC_LCTL, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                               KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, OSMLSFT,
-                                        OSMLSFT, KC_LGUI, KC_LOWR,           LGUI_T(KC_SPC),  KC_RAIS, OSMLSFT
+    KC_ESC,     KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                               KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
+LSFT_T(KC_TAB), HOMEALT, HOMECTL, HOMESFT, KC_R,    KC_T,                               KC_Y,    KC_U,    HOME_I,  HOME_O,  KC_P,    S_RBRC,
+    KC_LOWR,    KC_A,    KC_S,    KC_D,    HOMEGUI, KC_G,                               KC_H,    KC_J,    KC_K,    KC_L,    TD(X_OE),KC_ENT,
+    KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                               KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, OSMLSFT,
+                                        OSMLSFT, KC_LGUI, KC_LOWR,            LGUI_T(KC_SPC), KC_RAIS, OSMLSFT
 ),
 /* same as NORM but without homerow modifiers */
 //[_GAME] = LAYOUT_preonic_grid(
@@ -273,7 +273,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Lower
  * ,-----------------------------------------------------------------------------------.
- * |   ~  |   !  |   @  |   #  |   $  |   %  |   &  |   /  |      |   +  |   =  | Bksp |
+ * |   ~  |   !  |   @  |   #  |   $  |   %  |   &  |   /  |      |   +  |   ?  | Bksp |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |AltTab| PgUp |  Up  | PgDn |  ()  | [t]  | Home |   [  |   {  |   }  |   ]  |  \   |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
@@ -287,17 +287,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //_______, KC_PGUP, KC_UP,   KC_PGDN, PARANT,   _______, KC_HOME, ALGR(KC_8), ALGR(KC_7), ALGR(KC_0), ALGR(KC_9), NO_BSLS,
 
 [_LOWER] = LAYOUT(
-  KC_TILD, KC_EXLM, CST_AT,  KC_HASH, CST_DLR,   KC_PERC,                            KC_CIRC, KC_AMPR, _______, NO_PLUS, KC_RPRN, KC_BSPC,
+  KC_TILD, KC_EXLM, CST_AT,  KC_HASH, CST_DLR,   KC_PERC,                            KC_CIRC, KC_AMPR, _______, NO_PLUS, NO_QUES, KC_BSPC,
   ALTTAB,  KC_PGUP, KC_UP,   KC_PGDN, PARANT,    _______,                            KC_HOME, LBRACK,  LCURLY,  RCURLY,  RBRACK,  NO_BSLS,
   KC_JIGG, KC_LEFT, KC_DOWN, KC_RGHT, NO_ASTR,   _______,                            KC_CIRC, COLON,   SCOLON,  UNDERSC, RSTPDBG, _______,
   _______, _______, _______, _______, S(KC_INS), _______,                            KC_END,  NO_LABK, NO_RABK, _______, DBLAROW, _______,
                                         _______, _______, _______,         _______,  _______, _______
 ),
 
-
 /* Raise
  * ,-----------------------------------------------------------------------------------.
- * | EXIT | SEC1 | SEC2 | SEC3 | ADMPW|BANKID|      |      | G(-) | G(+) |   ?  |      |
+ * | EXIT | SEC1 | SEC2 | SEC3 | ADMPW|BANKID|      |      | G(-) | G(+) |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      | MBTN1| M UP | MBTN2| MW UP|      |      |      |      |      |   |  |  '   |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
@@ -309,10 +308,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_RAISE] = LAYOUT(
-  EXITENT, SECRET1, SECRET2, SECRET3,  ADMINPW,  PERSNR,                             _______, CWUSER,  G_MINUS, G_PLUS,  NO_QUES, _______,
+  EXITENT, SECRET1, SECRET2, SECRET3,  ADMINPW,  PERSNR,                             _______, CWUSER,  G_MINUS, G_PLUS,  _______, _______,
   _______, KC_BTN1, KC_MS_U, KC_BTN2,  KC_WH_U,  _______,                            _______, _______, _______, _______, NO_PIPE, NO_QUOT,
   _______, KC_MS_L, KC_MS_D, KC_MS_R,  KC_WH_D,  _______,                            DOTDOT,  C(KC_B), NO_ACUT, CTSH_L,  _______, NO_PLUS,
-  _______, _______, _______, _______,  CTSH_V,   _______,                            _______, CTSH_M,  _______, _______, ARROW,   _______,
+  _______, SECRET4, SECRET5, SECRET6,  CTSH_V,   _______,                            _______, CTSH_M,  _______, _______, ARROW,   _______,
                                         _______, _______, _______,         _______,  _______, _______
 ),
 
