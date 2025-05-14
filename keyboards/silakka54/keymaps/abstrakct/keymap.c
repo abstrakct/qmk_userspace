@@ -44,6 +44,7 @@
 #define LOW_SPC LT(_LOWER,KC_SPC)
 #define LOW_ENT LT(_LOWER,KC_ENT)
 #define RAI_SPC LT(_RAISE,KC_SPC)
+#define RAIBSPC LT(_RAISE,KC_BSPC)
 #define RAI_ENT LT(_RAISE,KC_ENT)
 
 
@@ -76,6 +77,7 @@ enum silakka_layers {
   _GAME,
   _COLE,
   _TARMAK1,
+  _DCSS,
   // _WORK,
   // Overlay layers
   _LOWER,
@@ -84,7 +86,6 @@ enum silakka_layers {
   _FOUR,
   _FIVE,
   _CORNER,
-  _NOENTER,
   _MVMNT,
 };
 
@@ -227,11 +228,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //),
 [_NORM] = LAYOUT(
     KC_ESC,     KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                               KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
-LSFT_T(KC_TAB), HOMEALT, HOMECTL, HOMESFT, KC_R,    KC_T,                               KC_Y,    KC_U,    HOME_I,  HOME_O,  KC_P,    S_RBRC,
+LT(_RAISE, KC_TAB), HOMEALT, HOMECTL, HOMESFT, KC_R,    KC_T,                               KC_Y,    KC_U,    HOME_I,  HOME_O,  KC_P,    LT(_LOWER, S_RBRC),
     KC_LOWR,    KC_A,    KC_S,    KC_D,    HOMEGUI, KC_G,                               KC_H,    KC_J,    KC_K,    KC_L,    TD(X_OE),KC_ENT,
     KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                               KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, OSMLSFT,
-                                        OSMLSFT, KC_LGUI, KC_LOWR,            LGUI_T(KC_SPC), KC_RAIS, OSMLSFT
+                                        _______, KC_LGUI, LOW_ENT,          LOW_SPC, RAIBSPC, MO(_THIRD)
 ),
+
 /* same as NORM but without homerow modifiers */
 //[_GAME] = LAYOUT_preonic_grid(
 //  KC_ESC,             KC_1,    KC_2,    KC_3,    KC_4,    KC_5,   KC_6,   KC_7,    KC_8,    KC_9,   KC_0,    KC_BSPC,
@@ -245,16 +247,15 @@ LSFT_T(KC_TAB), HOMEALT, HOMECTL, HOMESFT, KC_R,    KC_T,                       
     KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                               KC_J,    KC_L,    KC_U,    KC_Y,    TD(X_OE),S_RBRC,
     KC_LOWR, KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                               KC_M,    KC_N,    KC_E,    KC_I,    KC_O, KC_ENT,
     KC_LCTL, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,                               KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, OSMLSFT,
-                                        OSMLSFT, KC_LGUI, KC_LOWR,           LGUI_T(KC_SPC),  KC_RAIS, OSMLSFT
+                                        _______, KC_LGUI, LOW_ENT,          LOW_SPC, RAIBSPC, MO(_THIRD)
 ),
 [_TARMAK1] = LAYOUT(
     KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                               KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
     KC_TAB,  KC_Q,    KC_W,    KC_J,    KC_R,    KC_T,                               KC_Y,    KC_U,    HOME_I,  HOME_O,  KC_P,    S_RBRC,
     KC_LOWR, KC_A,    KC_S,    KC_D,    HOMEGUI, KC_G,                               KC_H,    KC_N,    KC_E,    KC_L,    TD(X_OE),KC_ENT,
     KC_LCTL, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                               KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, OSMLSFT,
-                                        OSMLSFT, KC_LGUI, KC_LOWR,           LGUI_T(KC_SPC),  KC_RAIS, OSMLSFT
+                                        _______, KC_LGUI, LOW_ENT,          LOW_SPC, RAIBSPC, MO(_THIRD)
 ),
-
 
 
 // TODO: consider a separate layer for key below TAB - it's really only used for wasd etc.
@@ -270,6 +271,14 @@ LSFT_T(KC_TAB), HOMEALT, HOMECTL, HOMESFT, KC_R,    KC_T,                       
 //  KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,   KC_N,   KC_M,    KC_COMM, KC_DOT, KC_SLSH, KC_RSFT,
 //  KC_LCTL,    KC_RCTL, KC_LALT, KC_LGUI, KC_LOWR, KC_SPC, KC_SPC, KC_RAIS, KC_LEAD, FOUR,   FIVE,    _______
 //),
+[_DCSS] = LAYOUT(
+    KC_ESC,     KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                               KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
+    KC_TAB,  HOMEALT, HOMECTL, HOMESFT,    KC_R,    KC_T,                               KC_Y,    KC_U,    HOME_I,  HOME_O,  KC_P,    S_RBRC,
+    KC_LOWR,    KC_A,    KC_S,    KC_D,    HOMEGUI, KC_G,                               KC_H,    KC_J,    KC_K,    KC_L,    TD(X_OE),KC_ENT,
+    KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_M,                               KC_B,    KC_N,    KC_COMM, KC_DOT,  KC_SLSH, OSMLSFT,
+                                        KC_TAB,  S(KC_X), KC_LOWR,              KC_SPC, KC_RAIS, MO(_THIRD)
+),
+
 
 /* Lower
  * ,-----------------------------------------------------------------------------------.
@@ -396,7 +405,6 @@ LSFT_T(KC_TAB), HOMEALT, HOMECTL, HOMESFT, KC_R,    KC_T,                       
 //  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
 //),
 
-
 /* Adjust (Lower + Raise)
  * ,-----------------------------------------------------------------------------------.
  * | SysRq|      |      |      |      |      |      |      |      |      |C-A-0 |      |
@@ -414,7 +422,7 @@ LSFT_T(KC_TAB), HOMEALT, HOMECTL, HOMESFT, KC_R,    KC_T,                       
   KC_F11,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                             KC_F6,     KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F12,
   KC_CAPS, _______, _______, _______, _______, _______,                      DF(_TARMAK1), _______, _______, _______, _______, DF(_COLE),
   QK_BOOT, _______, _______, _______, _______, _______,                           _______, _______, _______, _______, _______, DF(_NORM), // DF(_WORK),
-  KC_SYRQ, _______, _______, _______, _______, _______,                           _______, _______, _______, _______, _______, _______,
+  KC_SYRQ, _______, _______, _______, _______, _______,                           _______, _______, _______, _______, _______, TG(_DCSS),
                                       _______, _______, _______,        _______,  _______, _______
 ),
 
