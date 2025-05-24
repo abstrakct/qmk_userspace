@@ -82,7 +82,7 @@ enum silakka_layers {
   // Overlay layers
   _LOWER,
   _RAISE,
-  _THIRD, // aka ADJUST
+  _THREE, // aka ADJUST
   _FOUR,
   _FIVE,
   _CORNER,
@@ -219,19 +219,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |      |      |      |Shift |Super |Lower |Space |Raise |Shift |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
-//[_NORM] = LAYOUT_preonic_grid(
-//  KC_ESC,             KC_1,    KC_2,    KC_3,    KC_4,    KC_5,   KC_6,   KC_7,    KC_8,    KC_9,   KC_0,    KC_BSPC,
-//  LT(_RAISE, KC_TAB), HOMEALT, HOMECTL, HOMESFT, KC_R,    KC_T,   KC_Y,   KC_U,    HOME_I,  HOME_O, KC_P,    S_RBRC,
-//  KC_LOWR,            KC_A,    KC_S,    KC_D,    HOMEGUI, KC_G,   KC_H,   KC_J,    KC_K,    KC_L,   TD(X_OE),KC_ENT,
-//  OSMLSFT,            KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,   KC_N,   KC_M,    KC_COMM, KC_DOT, KC_SLSH, OSMLSFT,
-//  KC_LCTL,            KC_NOEN, KC_LALT, KC_LGUI, KC_LOWR, KC_SPC, KC_SPC, KC_RAIS, QK_LEAD, FOUR,   FIVE,    KC_CORN
-//),
 [_NORM] = LAYOUT(
     KC_ESC,     KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                               KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
 LT(_RAISE, KC_TAB), HOMEALT, HOMECTL, HOMESFT, KC_R,    KC_T,                               KC_Y,    KC_U,    HOME_I,  HOME_O,  KC_P,    LT(_LOWER, S_RBRC),
     KC_LOWR,    KC_A,    KC_S,    KC_D,    HOMEGUI, KC_G,                               KC_H,    KC_J,    KC_K,    KC_L,    TD(X_OE),KC_ENT,
     KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                               KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, OSMLSFT,
-                                        _______, KC_LGUI, LOW_ENT,          LOW_SPC, RAIBSPC, MO(_THIRD)
+                                        MO(_FOUR), KC_LGUI, MO(_LOWER),          KC_SPC, MO(_RAISE), MO(_THREE)
+                                        // _______, KC_LGUI, MO(_LOWER),          LOW_SPC, RAIBSPC, MO(_THREE)
 ),
 
 /* same as NORM but without homerow modifiers */
@@ -247,14 +241,14 @@ LT(_RAISE, KC_TAB), HOMEALT, HOMECTL, HOMESFT, KC_R,    KC_T,                   
     KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                               KC_J,    KC_L,    KC_U,    KC_Y,    TD(X_OE),S_RBRC,
     KC_LOWR, KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                               KC_M,    KC_N,    KC_E,    KC_I,    KC_O, KC_ENT,
     KC_LCTL, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,                               KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, OSMLSFT,
-                                        _______, KC_LGUI, LOW_ENT,          LOW_SPC, RAIBSPC, MO(_THIRD)
+                                        _______, KC_LGUI, MO(_LOWER),          KC_SPC, MO(_RAISE), MO(_THREE)
 ),
 [_TARMAK1] = LAYOUT(
     KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                               KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
     KC_TAB,  KC_Q,    KC_W,    KC_J,    KC_R,    KC_T,                               KC_Y,    KC_U,    HOME_I,  HOME_O,  KC_P,    S_RBRC,
     KC_LOWR, KC_A,    KC_S,    KC_D,    HOMEGUI, KC_G,                               KC_H,    KC_N,    KC_E,    KC_L,    TD(X_OE),KC_ENT,
     KC_LCTL, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                               KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, OSMLSFT,
-                                        _______, KC_LGUI, LOW_ENT,          LOW_SPC, RAIBSPC, MO(_THIRD)
+                                        _______, KC_LGUI, MO(_LOWER),          KC_SPC, MO(_RAISE), MO(_THREE)
 ),
 
 
@@ -276,7 +270,7 @@ LT(_RAISE, KC_TAB), HOMEALT, HOMECTL, HOMESFT, KC_R,    KC_T,                   
     KC_TAB,  HOMEALT, HOMECTL, HOMESFT,    KC_R,    KC_T,                               KC_Y,    KC_U,    HOME_I,  HOME_O,  KC_P,    S_RBRC,
     KC_LOWR,    KC_A,    KC_S,    KC_D,    HOMEGUI, KC_G,                               KC_H,    KC_J,    KC_K,    KC_L,    TD(X_OE),KC_ENT,
     KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_M,                               KC_B,    KC_N,    KC_COMM, KC_DOT,  KC_SLSH, OSMLSFT,
-                                        KC_TAB,  S(KC_X), KC_LOWR,              KC_SPC, KC_RAIS, MO(_THIRD)
+                                        KC_TAB,  S(KC_X), KC_LOWR,              KC_SPC, KC_RAIS, MO(_THREE)
 ),
 
 
@@ -405,34 +399,31 @@ LT(_RAISE, KC_TAB), HOMEALT, HOMECTL, HOMESFT, KC_R,    KC_T,                   
 //  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
 //),
 
-/* Adjust (Lower + Raise)
- * ,-----------------------------------------------------------------------------------.
- * | SysRq|      |      |      |      |      |      |      |      |      |C-A-0 |      |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | CAPS |      | Debug|RGBTOG|RGB P |RGB B |RGB R |      |      |      |      |  Del |
- * |------+------+------+------+------+-------------+------+------+------+------+------|
- * |      |      |Aud cy|Aud on|AudOff|      |      |      |      |      |      |      |
- * |------+------+------+------+------+------|------+------+------+------+------+------|
- * |      |Voice-|Voice+|Mus on|MusOff|MidiOn|MidOff|      |      |      |      |      |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Boot |      |      |      |TLOWER|      |      |TRAISE|TMVMNT|      |      |      |
- * `-----------------------------------------------------------------------------------'
+/* Third layer (was Adjust (Lower + Raise))
  */
-[_THIRD] = LAYOUT(
-  KC_F11,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                             KC_F6,     KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F12,
+[_THREE] = LAYOUT(
+  KC_F11,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                               KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10, KC_F12,
   KC_CAPS, _______, _______, _______, _______, _______,                      DF(_TARMAK1), _______, _______, _______, _______, DF(_COLE),
   QK_BOOT, _______, _______, _______, _______, _______,                           _______, _______, _______, _______, _______, DF(_NORM), // DF(_WORK),
   KC_SYRQ, _______, _______, _______, _______, _______,                           _______, _______, _______, _______, _______, TG(_DCSS),
                                       _______, _______, _______,        _______,  _______, _______
 ),
 
+
+[_FOUR] = LAYOUT(
+  _______, _______, _______, _______, _______, _______,                           _______, _______, _______, _______, _______, _______,
+  _______, _______, _______, _______, _______, _______,                           _______, _______, _______, _______, _______, _______,
+  _______, _______, _______, _______, _______, _______,                           KC_LEFT, KC_DOWN,  KC_UP , KC_RGHT, _______, _______,
+  _______, _______, _______, _______, _______, _______,                           _______, _______, _______, _______, _______, _______,
+                                      _______, _______, _______,        _______,  _______, _______
+),
 };
 
 
 // Functions and stuff
 
 void keyboard_post_init_user(void) {
-    set_tri_layer_layers(_LOWER, _RAISE, _THIRD);
+    set_tri_layer_layers(_LOWER, _RAISE, _THREE);
 }
 
 static uint32_t idle_callback(uint32_t trigger_time, void *cb_arg) {
