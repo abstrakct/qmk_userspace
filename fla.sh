@@ -1,9 +1,11 @@
 #!/bin/sh
 
+DRIVE=/dev/sdc1
+
 # Function to mount the keyboard storage
 mount_keyboard() {
     while true; do
-        if sudo mount /dev/sde1 /mnt/kb; then
+        if sudo mount $DRIVE /mnt/kb; then
             echo "Successfully mounted keyboard storage"
             return 0
         else
@@ -22,4 +24,4 @@ sudo cp silakka54_abstrakct.uf2 /mnt/kb/
 
 # Unmount the keyboard storage
 echo "Unmounting keyboard storage"
-sudo umount /dev/sde1
+sudo umount $DRIVE
