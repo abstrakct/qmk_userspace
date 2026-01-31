@@ -303,9 +303,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //    ┌──────┬─────────┬─────────┬─────────┬─────────┬────────┐                       ┌────────┬────────┬─────────┬────────┬─────────┬─────────┐
 //    │ exit │ SECRET1 │ SECRET2 │ SECRET3 │ ADMINPW │ PERSNR │                       │        │ CWUSER │ G_MINUS │ G_PLUS │         │         │
 //    ├──────┼─────────┼─────────┼─────────┼─────────┼────────┤                       ├────────┼────────┼─────────┼────────┼─────────┼─────────┤
-//    │      │  btn1   │  ms_u   │  btn2   │  wh_u   │        │                       │        │        │         │        │ NO_PIPE │ NO_QUOT │
+//    │      │ MS_BTN1 │  MS_UP  │ MS_BTN2 │ MS_WHLU │        │                       │        │        │         │        │ NO_PIPE │ NO_QUOT │
 //    ├──────┼─────────┼─────────┼─────────┼─────────┼────────┤                       ├────────┼────────┼─────────┼────────┼─────────┼─────────┤
-//    │      │  ms_l   │  ms_d   │  ms_r   │  wh_d   │        │                       │ DOTDOT │  C(b)  │ NO_ACUT │ CTSH_L │         │    +    │
+//    │      │ MS_LEFT │ MS_DOWN │ MS_RGHT │ MS_WHLD │        │                       │ DOTDOT │  C(b)  │ NO_ACUT │ CTSH_L │         │    +    │
 //    ├──────┼─────────┼─────────┼─────────┼─────────┼────────┤                       ├────────┼────────┼─────────┼────────┼─────────┼─────────┤
 //    │      │         │ SECRET5 │ SECRET6 │ CTSH_V  │        │                       │        │ CTSH_M │         │        │  ARROW  │         │
 //    └──────┴─────────┴─────────┴─────────┼─────────┼────────┼─────┐           ┌─────┼────────┼────────┼─────────┴────────┴─────────┴─────────┘
@@ -313,8 +313,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //                                         └─────────┴────────┴─────┘           └─────┴────────┴────────┘
 [_RAISE] = LAYOUT(
   EXITENT , SECRET1 , SECRET2 , SECRET3 , ADMINPW , PERSNR  ,                                 _______ , CWUSER  , G_MINUS , G_PLUS  , _______ , _______,
-  _______ , KC_BTN1 , KC_MS_U , KC_BTN2 , KC_WH_U , _______ ,                                 _______ , _______ , _______ , _______ , NO_PIPE , NO_QUOT,
-  _______ , KC_MS_L , KC_MS_D , KC_MS_R , KC_WH_D , _______ ,                                 DOTDOT  , C(KC_B) , NO_ACUT , CTSH_L  , _______ , NO_PLUS,
+  _______ , MS_BTN1 , MS_UP   , MS_BTN2 , MS_WHLU , _______ ,                                 _______ , _______ , _______ , _______ , NO_PIPE , NO_QUOT,
+  _______ , MS_LEFT , MS_DOWN , MS_RGHT , MS_WHLD , _______ ,                                 DOTDOT  , C(KC_B) , NO_ACUT , CTSH_L  , _______ , NO_PLUS,
   _______ , _______ , SECRET5 , SECRET6 , CTSH_V  , _______ ,                                 _______ , CTSH_M  , _______ , _______ , ARROW   , _______,
                                           _______ , _______ , _______ ,             _______ , _______ , _______
 ),
@@ -369,9 +369,9 @@ static uint32_t idle_callback(uint32_t trigger_time, void *cb_arg) {
     // now idle-ing
     if (is_jiggling) {
         // SEND_STRING(SS_TAP(X_F15));
-        tap_code(KC_MS_L);
+        tap_code(MS_LEFT);
         wait_ms(100);
-        tap_code(KC_MS_R);
+        tap_code(MS_RGHT);
         return mouse_interval;
     }
 
