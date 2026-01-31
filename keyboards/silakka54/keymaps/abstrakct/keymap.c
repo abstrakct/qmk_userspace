@@ -262,22 +262,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                  _______ , KC_LGUI , MO(_LOWER) ,             KC_SPC , MO(_RAISE) , MO(_THREE)
 ),
 
-//    ┌──────┬───────┬───────┬───────┬───────┬──────┐                       ┌─────┬───────┬───────┬───────┬─────┬──────┐
-//    │ esc  │   1   │   2   │   3   │   4   │  5   │                       │  6  │   7   │   8   │   9   │  0  │ bspc │
-//    ├──────┼───────┼───────┼───────┼───────┼──────┤                       ├─────┼───────┼───────┼───────┼─────┼──────┤
-//    │ tab  │ q/alt │ w/ctl │ e/shf │   r   │  t   │                       │  y  │   u   │ i/shf │ o/ctl │  p  │  /   │
-//    ├──────┼───────┼───────┼───────┼───────┼──────┤                       ├─────┼───────┼───────┼───────┼─────┼──────┤
-//    │ LOW  │   a   │   s   │   d   │ f/gui │  g   │                       │  h  │   j   │   k   │   l   │ æøå │ ent  │
-//    ├──────┼───────┼───────┼───────┼───────┼──────┤                       ├─────┼───────┼───────┼───────┼─────┼──────┤
-//    │ lctl │   z   │   x   │   c   │   v   │  m   │                       │  b  │   n   │   ,   │   .   │  /  │ shft │
-//    └──────┴───────┴───────┴───────┼───────┼──────┼─────┐           ┌─────┼─────┼───────┼───────┴───────┴─────┴──────┘
+//    ┌──────┬───────┬───────┬───────┬───────┬──────┐                       ┌─────┬───────┬───────┬───────┬───┬──────┐
+//    │ esc  │   1   │   2   │   3   │   4   │  5   │                       │  6  │   7   │   8   │   9   │ 0 │ bspc │
+//    ├──────┼───────┼───────┼───────┼───────┼──────┤                       ├─────┼───────┼───────┼───────┼───┼──────┤
+//    │ tab  │ q/alt │ w/ctl │ e/shf │   r   │  t   │                       │  y  │   u   │ i/shf │ o/ctl │ p │  /   │
+//    ├──────┼───────┼───────┼───────┼───────┼──────┤                       ├─────┼───────┼───────┼───────┼───┼──────┤
+//    │ LOW  │   a   │   s   │   d   │ f/gui │  g   │                       │  h  │   j   │   k   │   l   │ > │ ent  │
+//    ├──────┼───────┼───────┼───────┼───────┼──────┤                       ├─────┼───────┼───────┼───────┼───┼──────┤
+//    │ lctl │   z   │   x   │   c   │   v   │  b   │                       │  n  │   m   │   ,   │   .   │ / │ shft │
+//    └──────┴───────┴───────┴───────┼───────┼──────┼─────┐           ┌─────┼─────┼───────┼───────┴───────┴───┴──────┘
 //                                   │  tab  │ S(x) │ LOW │           │ spc │ RAI │ THREE │
 //                                   └───────┴──────┴─────┘           └─────┴─────┴───────┘
 [_DCSS] = LAYOUT(
-  KC_ESC  , KC_1    , KC_2    , KC_3    , KC_4    , KC_5    ,                                KC_6    , KC_7       , KC_8    , KC_9   , KC_0     , KC_BSPC,
-  KC_TAB  , HOMEALT , HOMECTL , HOMESFT , KC_R    , KC_T    ,                                KC_Y    , KC_U       , HOME_I  , HOME_O , KC_P     , S_RBRC ,
-  KC_LOWR , KC_A    , KC_S    , KC_D    , HOMEGUI , KC_G    ,                                KC_H    , KC_J       , KC_K    , KC_L   , TD(X_OE) , KC_ENT ,
-  KC_LCTL , KC_Z    , KC_X    , KC_C    , KC_V    , KC_M    ,                                KC_B    , KC_N       , KC_COMM , KC_DOT , KC_SLSH  , OSMLSFT,
+  KC_ESC  , KC_1    , KC_2    , KC_3    , KC_4    , KC_5    ,                                KC_6    , KC_7       , KC_8    , KC_9   , KC_0    , KC_BSPC,
+  KC_TAB  , HOMEALT , HOMECTL , HOMESFT , KC_R    , KC_T    ,                                KC_Y    , KC_U       , HOME_I  , HOME_O , KC_P    , S_RBRC ,
+  KC_LOWR , KC_A    , KC_S    , KC_D    , HOMEGUI , KC_G    ,                                KC_H    , KC_J       , KC_K    , KC_L   , NO_RABK , KC_ENT ,
+  KC_LCTL , KC_Z    , KC_X    , KC_C    , KC_V    , KC_B    ,                                KC_N    , KC_M       , KC_COMM , KC_DOT , KC_SLSH , OSMLSFT,
                                           KC_TAB  , S(KC_X) , KC_LOWR ,             KC_SPC , KC_RAIS , MO(_THREE)
 ),
 
