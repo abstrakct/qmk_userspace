@@ -16,10 +16,13 @@
 
 #pragma once
 
-#define TAPPING_TERM 250
+#define TAPPING_TERM 175
 #define QUICK_TAP_TERM 125
-#define FLOW_TAP_TERM 150
+// #define FLOW_TAP_TERM 25
+#define FLOW_TAP_TERM 175
 // #define IGNORE_MOD_TAP_INTERRUPT
+#define PERMISSIVE_HOLD
+
 
 #define TAPPING_TOGGLE 2
 
