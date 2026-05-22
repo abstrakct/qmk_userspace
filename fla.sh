@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DRIVE=/dev/sdc1
+DRIVE=/dev/sdb1
 
 # Function to mount the keyboard storage
 mount_keyboard() {
